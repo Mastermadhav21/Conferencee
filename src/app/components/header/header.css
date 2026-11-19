@@ -1,0 +1,781 @@
+/* =========================================
+   PREMIUM CONFERENCE HEADER
+========================================= */
+
+:host {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #7c3aed;
+  --accent: #06b6d4;
+
+  --dark: #07152e;
+  --text: #334155;
+  --muted: #64748b;
+  --white: #ffffff;
+  --border: #e2e8f0;
+}
+
+
+/* =========================================
+   TOP CONFERENCE STRIP
+========================================= */
+
+.top-bar {
+  position: relative;
+  z-index: 1100;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      120deg,
+      #061226,
+      #102b5c,
+      #1e1b4b,
+      #061226
+    );
+
+  background-size: 250% 250%;
+
+  animation: topGradient 10s ease infinite;
+}
+
+
+@keyframes topGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.top-bar::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  left: 10%;
+  top: -220px;
+
+  border-radius: 50%;
+
+  background: rgba(56, 189, 248, 0.22);
+
+  filter: blur(35px);
+}
+
+
+.top-bar::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: 8%;
+  bottom: -260px;
+
+  border-radius: 50%;
+
+  background: rgba(124, 58, 237, 0.25);
+
+  filter: blur(40px);
+}
+
+
+.top-bar-content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.conference-info,
+.top-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* Info pills */
+
+.conference-info span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 5px 11px;
+
+  border-radius: 50px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+
+.conference-info i {
+  color: #38bdf8;
+}
+
+
+/* Email */
+
+.top-actions > a:not(.top-register-btn) {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  text-decoration: none;
+
+  font-size: 0.75rem;
+
+  transition: color 0.3s ease;
+}
+
+
+.top-actions > a:not(.top-register-btn):hover {
+  color: #ffffff;
+}
+
+
+.top-actions > a:not(.top-register-btn) i {
+  color: #38bdf8;
+}
+
+
+/* =========================================
+   TOP REGISTER BUTTON
+========================================= */
+
+.top-register-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 6px 14px;
+
+  border-radius: 50px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  box-shadow:
+    0 5px 18px rgba(37, 99, 235, 0.28);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.top-register-btn:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 25px rgba(37, 99, 235, 0.42);
+}
+
+
+/* =========================================
+   FLOATING MAIN NAVBAR
+========================================= */
+
+.custom-navbar {
+  position: sticky;
+
+  top: 12px;
+
+  z-index: 1050;
+
+  width: min(1320px, calc(100% - 30px));
+
+  margin: 0 auto;
+
+  min-height: 74px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.86);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.08);
+
+  transition:
+    top 0.35s ease,
+    min-height 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* Gradient glow line */
+
+.custom-navbar::before {
+  content: "";
+
+  position: absolute;
+
+  left: 12%;
+  right: 12%;
+  top: -1px;
+
+  height: 2px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--accent),
+      var(--primary),
+      var(--secondary),
+      transparent
+    );
+
+  opacity: 0.85;
+}
+
+
+.custom-navbar.scrolled {
+  top: 6px;
+
+  min-height: 64px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.14);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-brand {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0;
+
+  z-index: 2;
+}
+
+
+.logo-mark {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: var(--white);
+
+  font-size: 0.8rem;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.28);
+
+  transition: transform 0.35s ease;
+}
+
+
+.logo-mark::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 30px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: rotate(-35deg);
+
+  animation: logoShine 4s ease-in-out infinite;
+}
+
+
+@keyframes logoShine {
+  0%,
+  100% {
+    transform: translateX(-100px) rotate(-35deg);
+  }
+
+  50% {
+    transform: translateX(100px) rotate(-35deg);
+  }
+}
+
+
+.logo-mark span {
+  position: relative;
+  z-index: 1;
+}
+
+
+.navbar-brand:hover .logo-mark {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+
+.logo-content {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+
+.logo-content strong {
+  color: var(--dark);
+
+  font-size: 1.18rem;
+  font-weight: 850;
+
+  letter-spacing: 0.05em;
+}
+
+
+.logo-content span {
+  margin-top: 5px;
+
+  color: var(--primary);
+
+  font-size: 0.64rem;
+  font-weight: 800;
+
+  letter-spacing: 0.24em;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar-nav {
+  gap: 3px;
+}
+
+
+.navbar-nav .nav-link {
+  position: relative;
+
+  padding: 9px 11px !important;
+
+  border-radius: 9px;
+
+  color: var(--text);
+
+  font-size: 0.78rem;
+  font-weight: 650;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.navbar-nav .nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 0;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  transition: width 0.3s ease;
+}
+
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary);
+
+  background: rgba(37, 99, 235, 0.05);
+}
+
+
+.navbar-nav .nav-link.active {
+  color: var(--primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.08),
+      rgba(124, 58, 237, 0.06)
+    );
+}
+
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 45%;
+}
+
+
+/* =========================================
+   MAIN REGISTER CTA
+========================================= */
+
+.nav-cta {
+  margin-left: 8px;
+}
+
+
+.register-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 10px 17px;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: #ffffff !important;
+
+  text-decoration: none;
+
+  font-size: 0.78rem;
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.24);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.register-btn::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.28),
+      transparent 75%
+    );
+
+  transform: translateX(-120%);
+
+  transition: transform 0.6s ease;
+}
+
+
+.register-btn:hover {
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 28px rgba(37, 99, 235, 0.38);
+}
+
+
+.register-btn:hover::before {
+  transform: translateX(120%);
+}
+
+
+.register-btn span,
+.register-btn i {
+  position: relative;
+  z-index: 1;
+}
+
+
+.register-btn i {
+  transition: transform 0.3s ease;
+}
+
+
+.register-btn:hover i {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   MOBILE TOGGLE
+========================================= */
+
+.navbar-toggler {
+  width: 46px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid rgba(37, 99, 235, 0.15) !important;
+  border-radius: 13px;
+
+  background: rgba(37, 99, 235, 0.04);
+
+  box-shadow: none !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.navbar-toggler:hover {
+  background: rgba(37, 99, 235, 0.09);
+}
+
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+
+/* =========================================
+   TABLET + MOBILE
+========================================= */
+
+@media (max-width: 1199px) {
+
+  .custom-navbar {
+    top: 8px;
+
+    width: calc(100% - 24px);
+
+    min-height: 70px;
+  }
+
+
+  .navbar-collapse {
+    margin-top: 14px;
+
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+      0 20px 45px rgba(8, 21, 45, 0.13);
+  }
+
+
+  .navbar-nav {
+    gap: 3px;
+  }
+
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+
+  .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 14px !important;
+
+    font-size: 0.92rem;
+  }
+
+
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+
+
+  .nav-cta {
+    width: 100%;
+
+    margin: 10px 0 0;
+  }
+
+
+  .register-btn {
+    width: 100%;
+
+    padding: 13px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .top-bar-content {
+    min-height: 42px;
+  }
+
+
+  .conference-info {
+    gap: 5px;
+  }
+
+
+  .conference-info span {
+    padding: 4px 8px;
+
+    font-size: 0.65rem;
+  }
+
+
+  .top-actions > a:not(.top-register-btn) {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+  .top-bar {
+    display: none;
+  }
+
+
+  .custom-navbar {
+    top: 6px;
+
+    width: calc(100% - 16px);
+
+    border-radius: 16px;
+  }
+
+
+  .logo-mark {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+  }
+
+
+  .logo-content strong {
+    font-size: 1rem;
+  }
+
+
+  .logo-content span {
+    font-size: 0.56rem;
+  }
+
+
+  .navbar-collapse {
+    margin-top: 10px;
+
+    padding: 10px;
+  }
+
+}

@@ -1,0 +1,221 @@
+<!-- =========================================
+     CONFERENCE TOP BAR
+========================================= -->
+<div class="top-bar">
+  <div class="container top-bar-content">
+
+    <div class="conference-info">
+
+      <span>
+        <i class="bi bi-calendar-event"></i>
+        March 2026
+      </span>
+
+      <span>
+        <i class="bi bi-geo-alt-fill"></i>
+        India
+      </span>
+
+    </div>
+
+    <div class="top-actions">
+
+      <!-- PHONE -->
+      <a href="tel:+91XXXXXXXXXX">
+        <i class="bi bi-telephone-fill"></i>
+        +91 XXXXX XXXXX
+      </a>
+
+      <!-- EMAIL -->
+      <a href="mailto:icamc2026@gmail.com">
+        <i class="bi bi-envelope-fill"></i>
+        icamc2026@gmail.com
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- =========================================
+     MAIN CONFERENCE NAVBAR
+========================================= -->
+<nav
+  class="navbar navbar-expand-xl custom-navbar"
+  [class.scrolled]="isScrolled"
+>
+
+  <div class="container">
+
+    <!-- =========================================
+         CONFERENCE LOGO
+    ========================================= -->
+    <a class="navbar-brand" routerLink="/">
+
+      <div class="logo-mark">
+        <span>IC</span>
+      </div>
+
+      <div class="logo-content">
+        <strong>ICAMC</strong>
+        <span>2026</span>
+      </div>
+
+    </a>
+
+
+    <!-- =========================================
+         MOBILE MENU BUTTON
+    ========================================= -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#conferenceNavbar"
+      aria-controls="conferenceNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="conferenceNavbar"
+    >
+
+      <ul class="navbar-nav align-items-lg-center">
+
+
+       <!-- HOME -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#home"
+  >
+    Home
+  </a>
+</li>
+
+
+<!-- ABOUT -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#about"
+  >
+    About
+  </a>
+</li>
+
+
+<!-- CALL FOR PAPERS -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#callForPapers"
+  >
+    Call for Papers
+  </a>
+</li>
+
+
+<!-- IMPORTANT DATES -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#importantDates"
+  >
+    Important Dates
+  </a>
+</li>
+
+
+<!-- TRACKS -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#tracks"
+  >
+    Tracks
+  </a>
+</li>
+
+
+<!-- COMMITTEE -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#committee"
+  >
+    Committee
+  </a>
+</li>
+
+
+<!-- PUBLICATION -->
+<li class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Publication
+  </a>
+
+  <ul class="dropdown-menu">
+
+    @for (publication of publications; track publication.name) {
+      <li>
+        <a
+          class="dropdown-item"
+          [routerLink]="publication.route"
+          routerLinkActive="active"
+        >
+          {{ publication.name }}
+        </a>
+      </li>
+    }
+
+  </ul>
+</li>
+
+
+<!-- REGISTRATION -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#registration"
+  >
+    Registration
+  </a>
+</li>
+
+
+<!-- CONTACT -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    href="#contact"
+  >
+    Contact
+  </a>
+</li>
+
+
+<!-- REGISTER BUTTON -->
+<li class="nav-item nav-cta">
+  <a
+    href="#registration"
+    class="register-btn"
+  >
+    Register
+    <i class="bi bi-arrow-up-right"></i>
+  </a>
+</li>

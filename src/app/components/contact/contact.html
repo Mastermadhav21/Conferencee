@@ -1,0 +1,100 @@
+<!-- =========================================
+     CONTACT SECTION
+========================================= -->
+<section class="contact-section" id="contact">
+
+  <!-- Background Grid -->
+  <div class="contact-grid"></div>
+
+  <div class="container contact-container">
+
+    <!-- SECTION HEADER -->
+    <div class="contact-header">
+
+      <div class="section-tag">
+        <span class="tag-dot"></span>
+        GET IN TOUCH
+      </div>
+
+      <h2>
+        CONTACT <span>US</span>
+      </h2>
+
+      <div class="title-line"></div>
+
+      <p>
+        Get in touch with us for any queries regarding the conference.
+      </p>
+
+    </div>
+
+
+    <!-- CONTACT CARDS -->
+    <div class="contact-cards">
+
+      @for (contact of contactDetails; track contact.title) {
+
+        <div class="contact-card">
+
+          <!-- ICON -->
+          <div class="contact-icon">
+            <i class="bi {{ contact.icon }}"></i>
+          </div>
+
+
+          <!-- CONTENT -->
+          <div class="contact-content">
+
+            <h3>{{ contact.title }}</h3>
+
+            <p class="contact-primary">
+              {{ contact.primary }}
+            </p>
+
+            @if (contact.secondary) {
+              <p class="contact-secondary">
+                {{ contact.secondary }}
+              </p>
+            }
+
+          </div>
+
+
+          <!-- ACTION -->
+          <a
+            class="contact-link"
+            [href]="contact.link"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>{{ contact.action }}</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- MAP -->
+    <div class="map-wrapper">
+
+      <div class="map-top-line"></div>
+
+      <iframe
+        src="https://www.google.com/maps?q=HMR%20Institute%20of%20Technology%20and%20Management%20Hamidpur%20Delhi&output=embed"
+        width="100%"
+        height="420"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>

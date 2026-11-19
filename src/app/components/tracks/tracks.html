@@ -1,0 +1,70 @@
+<section class="tracks-section" id="tracks">
+
+  <div class="tracks-grid"></div>
+
+  <div class="container tracks-container">
+
+    <div class="tracks-header">
+
+      <div class="section-tag">
+        <span class="tag-dot"></span>
+        RESEARCH DOMAINS
+      </div>
+
+      <h2>
+        Conference <span>Tracks</span>
+      </h2>
+
+      <p>
+        Exploring the frontiers of computational science through
+        multidisciplinary research initiatives.
+      </p>
+
+    </div>
+
+
+    <div class="tracks-grid-layout">
+
+      @for (track of tracks; track track.number) {
+
+        <div class="track-card">
+
+          <div class="track-top">
+
+            <div class="track-number">
+              {{ track.number }}
+              <span></span>
+            </div>
+
+            <div class="track-icon">
+              <i class="bi {{ track.icon }}"></i>
+            </div>
+
+          </div>
+
+
+          <div class="track-content">
+
+            <h3>{{ track.title }}</h3>
+
+            <p>
+              {{ track.description }}
+            </p>
+
+          </div>
+
+
+          <a href="#papers" class="track-link">
+            <span>Explore Track</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

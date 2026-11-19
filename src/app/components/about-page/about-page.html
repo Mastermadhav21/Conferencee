@@ -1,0 +1,284 @@
+<!-- Page Header Hero -->
+<div class="about-hero-header py-5 text-center bg-light">
+  <div class="container py-3">
+    <h1 class="page-title mb-2">About MG Digital Solutions</h1>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item">
+          <a href="#" class="text-danger text-decoration-none">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          About Us
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Story Section -->
+<section class="story-section py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Story Text -->
+      <div class="col-lg-6">
+        <span class="sub-title text-danger text-uppercase fw-bold mb-2 d-inline-block">
+          Our Journey
+        </span>
+
+        <h2 class="section-title mb-4">
+          Transforming Ideas into Digital Reality
+        </h2>
+
+        <p class="story-desc text-muted mb-3">
+          Founded in 2025 with a vision to deliver innovative IT solutions that
+          help businesses grow in the digital world.
+        </p>
+
+        <p class="story-desc text-muted mb-4">
+          We specialize in web development, mobile application development,
+          custom software solutions, cloud integration, and IT consulting.
+          Our focus is on building secure, scalable, and high-performance
+          digital products that deliver real business value.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="border-start border-danger border-3 ps-3">
+              <h4 class="fw-bold mb-1">2025</h4>
+              <span class="text-muted small">Company Founded</span>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="border-start border-danger border-3 ps-3">
+              <h4 class="fw-bold mb-1">10+</h4>
+              <span class="text-muted small">Projects Delivered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="col-lg-6">
+        <div class="infrastructure-img-box">
+          <img
+            src="/assets/images/header.jpeg"
+            alt="MG Digital Solutions"
+            class="img-fluid rounded shadow-sm infrastructure-img"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Technology Section -->
+<section class="tech-section py-5 bg-light">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="sub-title text-danger text-uppercase fw-bold mb-2 d-inline-block">
+        Technical Infrastructure
+      </span>
+
+      <h2 class="section-title">
+        Empowering Businesses with Modern Technology
+      </h2>
+    </div>
+
+    <div class="row g-4">
+
+      @for (tech of techList; track tech.title) {
+        <div class="col-md-4">
+
+          <div class="tech-card p-4 h-100 bg-white shadow-sm border-0">
+
+            <div class="tech-icon-box text-danger mb-4">
+              <i [className]="tech.icon"></i>
+            </div>
+
+            <h4 class="tech-title mb-3">
+              {{ tech.title }}
+            </h4>
+
+            <p class="tech-desc text-muted mb-0">
+              {{ tech.desc }}
+            </p>
+
+          </div>
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="team-section py-5">
+
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="sub-title text-danger text-uppercase fw-bold mb-2 d-inline-block">
+        Our Process
+      </span>
+
+      <h2 class="section-title">
+        Our Project Execution Process
+      </h2>
+
+      <p class="text-muted mx-auto mt-2" style="max-width:600px;">
+        We follow a structured and transparent development process to deliver
+        secure, scalable, and high-quality digital solutions on time and within
+        budget.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      @for (doc of team; track doc.name) {
+
+             <div class="col-lg-4 col-md-6">
+
+    <div class="process-card">
+
+        <div class="process-number">
+            0{{ $index + 1 }}
+        </div>
+
+        <div class="process-image">
+
+            <img
+                [src]="doc.image"
+                [alt]="doc.name"
+                class="team-img">
+
+        </div>
+
+        <div class="process-content">
+
+            <h4>
+
+                {{doc.name}}
+
+            </h4>
+
+            <p>
+
+                {{doc.bio}}
+
+            </p>
+
+            <a href="#" class="learn-more">
+
+                Learn More
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+       <!--> <div class="col-lg-4 col-md-6">
+
+          <div class="team-card modern-card">
+
+            <div class="team-img-wrapper mb-4">
+              <img
+                [src]="doc.image"
+                [alt]="doc.name"
+                class="img-fluid team-img"
+              />
+            </div>
+
+            <h3 class="team-name mb-3">
+              {{ doc.name }}
+            </h3>
+
+            <p class="team-bio text-muted mb-0">
+              {{ doc.bio }}
+            </p>
+
+          </div>
+
+        </div>-->
+
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section py-5 bg-light">
+
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="sub-title text-danger text-uppercase fw-bold mb-2 d-inline-block">
+        Testimonials
+      </span>
+
+      <h2 class="section-title">
+        Our Clients' Success Stories
+      </h2>
+    </div>
+
+    <div class="row g-4">
+
+      @for (review of testimonials; track review.name) {
+
+        <div class="col-md-6">
+
+          <div class="testimonial-card p-4 h-100 bg-white shadow-sm border-0">
+
+            <div class="stars mb-3 text-warning">
+              @for (star of [1,2,3,4,5]; track star) {
+                <i class="bi bi-star-fill me-1"></i>
+              }
+            </div>
+
+            <p class="review-text fst-italic text-muted mb-4">
+              "{{ review.text }}"
+            </p>
+
+            <div class="reviewer-meta d-flex align-items-center">
+
+              <div class="reviewer-initials text-danger fw-bold me-3">
+                {{ review.name.charAt(0) }}
+              </div>
+
+              <div>
+                <h5 class="reviewer-name mb-0">
+                  {{ review.name }}
+                </h5>
+
+                <span class="reviewer-condition text-muted small">
+                  {{ review.issue }}
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

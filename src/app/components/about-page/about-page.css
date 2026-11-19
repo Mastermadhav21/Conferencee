@@ -1,0 +1,886 @@
+/* =========================================
+   ABOUT PAGE - MODERN PREMIUM DESIGN
+========================================= */
+
+:host {
+  --primary: #0ea5e9;
+  --primary-dark: #0369a1;
+  --secondary: #14b8a6;
+  --accent: #ef4444;
+
+  --text-dark: #0f172a;
+  --text-medium: #475569;
+  --text-light: #64748b;
+
+  --white: #ffffff;
+  --light-bg: #f8fafc;
+  --border: #e2e8f0;
+
+  --shadow-sm: 0 8px 25px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 18px 45px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 25px 60px rgba(15, 23, 42, 0.14);
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.about-hero-header {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(14, 165, 233, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(20, 184, 166, 0.10),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8fafc 0%, #eef6fb 50%, #f8fafc 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Decorative background circles */
+
+.about-hero-header::before,
+.about-hero-header::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.about-hero-header::before {
+  width: 280px;
+  height: 280px;
+  top: -140px;
+  left: -80px;
+  background: rgba(14, 165, 233, 0.10);
+}
+
+.about-hero-header::after {
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  bottom: -120px;
+  background: rgba(20, 184, 166, 0.10);
+}
+
+
+.page-title {
+  position: relative;
+  z-index: 1;
+
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #94a3b8;
+}
+
+.breadcrumb-item a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--primary-dark);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+
+/* =========================================
+   STORY SECTION
+========================================= */
+
+.story-section {
+  position: relative;
+  background: var(--white);
+}
+
+.section-title {
+  position: relative;
+
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+
+  width: 60px;
+  height: 4px;
+
+  margin-top: 16px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+
+.story-desc {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: var(--text-medium);
+}
+
+
+/* =========================================
+   INFRASTRUCTURE IMAGE
+========================================= */
+
+.infrastructure-img-box {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+
+  box-shadow: var(--shadow-md);
+}
+
+.infrastructure-img-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(15, 23, 42, 0.20)
+  );
+
+  pointer-events: none;
+}
+
+.infrastructure-img {
+  display: block;
+  width: 100%;
+  height: 420px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.infrastructure-img-box:hover .infrastructure-img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+
+/* =========================================
+   PROCESS / TECHNOLOGY CARDS
+========================================= */
+
+.process-card {
+  position: relative;
+
+  height: 100%;
+  padding: 35px 28px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(248, 250, 252, 0.95)
+    );
+
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 24px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* Top Gradient Line */
+
+.process-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 65%;
+  height: 4px;
+
+  transform: translateX(-50%);
+
+  border-radius: 0 0 20px 20px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+
+.process-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -90px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background: rgba(14, 165, 233, 0.05);
+
+  pointer-events: none;
+}
+
+
+.process-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(14, 165, 233, 0.25);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* Process Number */
+
+.process-number {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color: var(--white);
+
+  font-weight: 800;
+  font-size: 0.9rem;
+
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
+}
+
+
+/* =========================================
+   PROCESS IMAGE
+========================================= */
+
+.process-image {
+  position: relative;
+
+  width: 160px;
+  height: 160px;
+
+  margin: 10px auto 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(14, 165, 233, 0.08),
+      rgba(20, 184, 166, 0.10)
+    );
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08);
+
+  border: 5px solid var(--white);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.process-card:hover .process-image {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 18px 40px rgba(14, 165, 233, 0.18);
+}
+
+
+/* Use this specifically for process images */
+
+.process-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.process-card:hover .process-image img {
+  transform: scale(1.10);
+}
+
+
+/* =========================================
+   PROCESS CONTENT
+========================================= */
+
+.process-content {
+  position: relative;
+  z-index: 2;
+}
+
+.process-content h4 {
+  margin-bottom: 14px;
+
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+
+  font-size: 1.3rem;
+  font-weight: 750;
+
+  color: var(--text-dark);
+}
+
+
+.process-content p {
+  margin-bottom: 22px;
+
+  color: var(--text-medium);
+
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+
+/* Learn More Button */
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--primary);
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+
+.learn-more i {
+  transition: transform 0.3s ease;
+}
+
+
+.learn-more:hover {
+  color: var(--primary-dark);
+}
+
+.learn-more:hover i {
+  transform: translateX(6px);
+}
+
+
+/* =========================================
+   TECHNOLOGY CARDS
+========================================= */
+
+.tech-card {
+  position: relative;
+
+  height: 100%;
+  padding: 24px;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition: 0.35s ease;
+}
+
+
+.tech-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(14, 165, 233, 0.25);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+.tech-icon-box {
+  width: 58px;
+  height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(14, 165, 233, 0.12),
+      rgba(20, 184, 166, 0.12)
+    );
+
+  color: var(--primary);
+
+  font-size: 1.5rem;
+
+  transition: 0.35s ease;
+}
+
+
+.tech-card:hover .tech-icon-box {
+  transform: rotate(-8deg) scale(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  color: var(--white);
+
+  box-shadow:
+    0 10px 25px rgba(14, 165, 233, 0.25);
+}
+
+
+.tech-title {
+  margin-top: 18px;
+
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  color: var(--text-dark);
+}
+
+
+.tech-desc {
+  color: var(--text-medium);
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   MEDICAL SPECIALISTS TEAM
+========================================= */
+
+.team-section {
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 100%
+    );
+}
+
+
+.team-card {
+  position: relative;
+
+  height: 100%;
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: 0.4s ease;
+}
+
+
+.team-card:hover {
+  transform: translateY(-9px);
+
+  border-color: rgba(14, 165, 233, 0.20);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* Doctor Image */
+
+.team-img-wrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: 280px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+}
+
+
+.team-img-wrapper::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(15, 23, 42, 0.15)
+  );
+
+  pointer-events: none;
+}
+
+
+.team-img-wrapper .team-img {
+  display: block;
+
+  width: 100%;
+  height: 310px;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+
+.team-card:hover .team-img-wrapper .team-img {
+  transform: scale(1.07);
+}
+
+
+/* Specialist Badge */
+
+.team-badge {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 14px;
+  left: 14px;
+
+  padding: 8px 14px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  backdrop-filter: blur(10px);
+
+  color: var(--primary-dark);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+
+.team-name {
+  margin-top: 22px;
+
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+
+  font-size: 1.35rem;
+  font-weight: 800;
+
+  color: var(--text-dark);
+}
+
+
+.team-role {
+  margin-bottom: 12px;
+
+  color: var(--primary);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+
+.team-bio {
+  color: var(--text-medium);
+
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   TESTIMONIAL SECTION
+========================================= */
+
+.testimonial-card {
+  position: relative;
+
+  height: 100%;
+  padding: 28px;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition: 0.35s ease;
+}
+
+
+.testimonial-card::before {
+  content: "“";
+
+  position: absolute;
+
+  top: -22px;
+  right: 20px;
+
+  font-size: 8rem;
+  line-height: 1;
+
+  color: rgba(14, 165, 233, 0.07);
+
+  font-family: Georgia, serif;
+
+  pointer-events: none;
+}
+
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(14, 165, 233, 0.20);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+.review-text {
+  position: relative;
+
+  color: var(--text-medium);
+
+  font-style: italic;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+
+.reviewer-initials {
+  width: 46px;
+  height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  color: var(--white);
+
+  font-size: 1rem;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 18px rgba(14, 165, 233, 0.22);
+}
+
+
+.reviewer-name {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  color: var(--text-dark);
+}
+
+
+.reviewer-condition {
+  color: var(--text-light);
+
+  font-size: 0.78rem;
+}
+
+
+/* =========================================
+   SMOOTH SCROLL REVEAL SUPPORT
+========================================= */
+
+.process-card,
+.tech-card,
+.team-card,
+.testimonial-card {
+  will-change: transform;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+  .infrastructure-img {
+    height: 340px;
+  }
+
+  .process-card {
+    padding: 30px 22px;
+  }
+
+  .team-img-wrapper .team-img {
+    height: 290px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .about-hero-header {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+
+  .infrastructure-img {
+    height: 280px;
+  }
+
+  .process-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .team-img-wrapper .team-img {
+    height: 280px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .story-desc {
+    font-size: 0.95rem;
+  }
+
+  .process-card {
+    padding: 28px 20px;
+  }
+
+  .testimonial-card {
+    padding: 22px;
+  }
+
+  .infrastructure-img {
+    height: 240px;
+  }
+
+}

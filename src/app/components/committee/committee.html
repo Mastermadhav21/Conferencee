@@ -1,0 +1,238 @@
+<section class="committee-section">
+
+  <div class="container committee-container">
+
+    <!-- HEADER -->
+    <div class="committee-header">
+
+      <h2>
+        Conference
+        <span>Committee</span>
+      </h2>
+
+      <div class="committee-tabs">
+
+        <button
+          class="committee-tab"
+          [class.active]="activeTab === 'organizing'"
+          (click)="selectTab('organizing')"
+        >
+          ORGANIZING
+        </button>
+
+        <button
+          class="committee-tab"
+          [class.active]="activeTab === 'advisory'"
+          (click)="selectTab('advisory')"
+        >
+          ADVISORY
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= ORGANIZING COMMITTEE ================= -->
+    @if (activeTab === 'organizing') {
+
+      <div class="committee-table">
+
+        <!-- TABLE HEADER -->
+        <div class="table-head">
+          <div>ROLE / ID</div>
+          <div>NAME</div>
+          <div class="action-head">ACTIONS</div>
+        </div>
+
+
+        <!-- TABLE ROWS -->
+        @for (member of organizingCommittee; track member.id) {
+
+          <div class="committee-member">
+
+            <!-- MAIN ROW -->
+            <div class="table-row">
+
+              <!-- ROLE -->
+              <div class="member-role">
+
+                <span class="member-id">
+                  {{ member.id }}
+                </span>
+
+                <strong>
+                  {{ member.role }}
+                </strong>
+
+              </div>
+
+
+              <!-- NAMES -->
+              <div class="member-name">
+
+                @for (name of member.names; track name) {
+                  <p>{{ name }}</p>
+                }
+
+              </div>
+
+
+              <!-- ACTION -->
+              <div class="member-action">
+
+                <button
+                  type="button"
+                  class="view-btn"
+                  (click)="toggleProfile(member.id)"
+                >
+                  @if (selectedMemberId === member.id) {
+                    <span>CLOSE</span>
+                  } @else {
+                    <span>VIEW</span>
+                  }
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- EXPANDED PROFILE -->
+            @if (selectedMemberId === member.id) {
+
+              <div class="member-profile">
+
+                <div class="profile-label">
+                  FULL DETAILS
+                </div>
+
+                <div class="profile-content">
+
+                  <p>
+                    <strong>Member:</strong>
+
+                    {{ member.names.join(', ') }}
+                  </p>
+
+                  <p>
+                    <strong>Designation:</strong>
+
+                    {{ member.role }}
+                  </p>
+
+                </div>
+
+              </div>
+
+            }
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+
+    <!-- ================= ADVISORY COMMITTEE ================= -->
+    @if (activeTab === 'advisory') {
+
+      <div class="committee-table">
+
+        <!-- TABLE HEADER -->
+        <div class="table-head advisory-head">
+          <div>MEMBER ID</div>
+          <div>ADVISORY COMMITTEE MEMBER</div>
+          <div class="action-head">ACTIONS</div>
+        </div>
+
+
+        <!-- TABLE ROWS -->
+        @for (member of advisoryCommittee; track member.id) {
+
+          <div class="committee-member">
+
+            <div class="table-row advisory-row">
+
+              <!-- ID -->
+              <div class="member-role">
+
+                <span class="member-id">
+                  {{ member.id }}
+                </span>
+
+              </div>
+
+
+              <!-- NAME -->
+              <div class="member-name">
+
+                <p>
+                  {{ member.name }}
+                </p>
+
+              </div>
+
+
+              <!-- ACTION -->
+              <div class="member-action">
+
+                <button
+                  type="button"
+                  class="view-btn"
+                  (click)="toggleProfile(member.id)"
+                >
+                  @if (selectedMemberId === member.id) {
+                    <span>CLOSE</span>
+                  } @else {
+                    <span>VIEW</span>
+                  }
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- EXPANDED DETAILS -->
+            @if (selectedMemberId === member.id) {
+
+              <div class="member-profile">
+
+                <div class="profile-label">
+                  FULL DETAILS
+                </div>
+
+                <div class="profile-content">
+
+                  <p>
+                    <strong>Member:</strong>
+
+                    {{ member.name }}
+                  </p>
+
+                  <p>
+                    <strong>Committee:</strong>
+
+                    Advisory Committee
+                  </p>
+
+                </div>
+
+              </div>
+
+            }
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+  </div>
+
+</section>

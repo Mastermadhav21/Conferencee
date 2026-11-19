@@ -1,0 +1,139 @@
+<!-- =========================================
+     IMPORTANT DATES
+========================================= -->
+<section class="important-dates-section" id="importantDates">
+
+  <div class="dates-grid"></div>
+
+  <div class="container dates-container">
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+    <div class="dates-header">
+
+      <div class="section-tag">
+        <span class="tag-dot"></span>
+        KEY MILESTONES
+      </div>
+
+      <h2>
+        Important <span>Dates</span>
+      </h2>
+
+      <p>
+        Mark your calendar for the important milestones of ICAMC-2026.
+        Stay updated and don't miss any critical deadline.
+      </p>
+
+    </div>
+
+
+    <!-- =========================================
+         TIMELINE
+    ========================================= -->
+    <div class="timeline">
+
+      @for (item of dates; track item.title; let i = $index) {
+
+        <div
+          class="timeline-item"
+          [class.left]="i % 2 === 0"
+          [class.right]="i % 2 !== 0"
+        >
+
+          <div class="timeline-content">
+
+            <!-- DATE CARD -->
+            <div class="date-card">
+
+              <span class="date-value">
+                {{ item.displayDate }}
+              </span>
+
+              <span
+                class="status"
+                [class.live]="item.status === 'LIVE'"
+                [class.closed]="item.status === 'CLOSED'"
+              >
+                {{ item.status }}
+              </span>
+
+            </div>
+
+
+            <!-- EVENT INFORMATION -->
+            <div class="event-info">
+
+              <h3>
+                {{ item.title }}
+              </h3>
+
+
+              <!-- CONFERENCE DATE -->
+              @if (item.title === 'Conference Dates') {
+
+                <span class="event-status live-text">
+                  <i class="bi bi-calendar-event"></i>
+                  Main Conference Event
+                </span>
+
+              }
+
+              <!-- OTHER LIVE EVENTS -->
+              @else if (item.status === 'LIVE') {
+
+                <span class="event-status live-text">
+                  <i class="bi bi-broadcast"></i>
+                  Registration / Submission Open
+                </span>
+
+              }
+
+              <!-- CLOSED EVENTS -->
+              @else {
+
+                <span class="event-status closed-text">
+                  <i class="bi bi-lock-fill"></i>
+                  Deadline Closed
+                </span>
+
+              }
+
+            </div>
+
+          </div>
+
+
+          <!-- TIMELINE DOT -->
+          <div
+            class="timeline-dot"
+            [class.active-dot]="item.status === 'LIVE'"
+            [class.closed-dot]="item.status === 'CLOSED'"
+          ></div>
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- =========================================
+         CTA
+    ========================================= -->
+    <div class="dates-action">
+
+      <a
+        href="#callForPapers"
+        class="submit-btn"
+      >
+        Submit Your Paper
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

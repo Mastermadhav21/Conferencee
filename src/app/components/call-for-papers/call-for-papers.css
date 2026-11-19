@@ -1,0 +1,663 @@
+/* =========================================================
+   ICAMC 2026 - CALL FOR PAPERS
+   LIGHT THEME - MATCHED WITH ABOUT CONFERENCE
+========================================================= */
+
+:host {
+  display: block;
+
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #7c3aed;
+  --accent: #06b6d4;
+
+  --dark: #08152d;
+  --text: #1e293b;
+  --muted: #64748b;
+
+  --white: #ffffff;
+  --soft-bg: #f8fafc;
+  --soft-blue: #eff6ff;
+
+  --border: #e2e8f0;
+  --border-blue: rgba(37, 99, 235, 0.16);
+
+  --green: #22c55e;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.call-papers-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 100px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 55%,
+      #ffffff 100%
+    );
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.call-papers-grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.75;
+
+  background-image:
+    linear-gradient(
+      rgba(37, 99, 235, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.call-papers-container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  max-width: 850px;
+
+  margin-bottom: 48px;
+}
+
+
+.section-index {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 15px;
+
+  color: var(--primary);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+
+.section-index::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 12px rgba(6, 182, 212, 0.5);
+}
+
+
+.section-heading h2 {
+  margin: 0;
+
+  color: var(--dark);
+
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+
+.section-heading h2 span {
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   HEADING LINE
+========================================================= */
+
+.heading-line {
+  position: relative;
+
+  width: 100%;
+  height: 1px;
+
+  margin-top: 28px;
+
+  background: var(--border);
+}
+
+
+.heading-line span {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 150px;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--accent),
+      transparent
+    );
+
+  box-shadow:
+    0 0 14px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =========================================================
+   MAIN PANEL
+========================================================= */
+
+.call-papers-card {
+  position: relative;
+
+  max-width: 1050px;
+
+  overflow: hidden;
+
+  padding: 56px;
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.07);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+.call-papers-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(37, 99, 235, 0.25);
+
+  box-shadow:
+    0 30px 75px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   PANEL GLOW
+========================================================= */
+
+.call-papers-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  top: -280px;
+  right: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.1),
+      rgba(124, 58, 237, 0.04),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP STATUS BAR
+========================================================= */
+
+.paper-status {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+
+  padding: 9px 14px;
+
+  border-radius: 30px;
+
+  color: var(--primary);
+
+  background:
+    rgba(37, 99, 235, 0.06);
+
+  border:
+    1px solid rgba(37, 99, 235, 0.1);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.6);
+
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+
+@keyframes livePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.7);
+    opacity: 0.55;
+  }
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.call-papers-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.call-papers-card h3 {
+  max-width: 850px;
+
+  margin: 0 0 24px;
+
+  color: var(--dark);
+
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+
+  line-height: 1.3;
+
+  font-weight: 750;
+
+  letter-spacing: -0.025em;
+}
+
+
+.call-papers-card h3 span {
+  color: var(--primary);
+}
+
+
+.call-papers-card p {
+  max-width: 900px;
+
+  margin-bottom: 20px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
+
+.paper-highlight {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 28px;
+
+  padding: 22px 24px;
+
+  border-left: 3px solid var(--primary);
+  border-radius: 0 14px 14px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.07),
+      rgba(255, 255, 255, 0)
+    );
+
+  color: var(--text);
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER / BUTTONS
+========================================================= */
+
+.call-papers-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 42px;
+  padding-top: 30px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.submit-btn,
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 14px 23px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+  font-weight: 750;
+
+  letter-spacing: 0.02em;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* Submit Button */
+
+.submit-btn {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--accent)
+    );
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.18);
+}
+
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 16px 32px rgba(37, 99, 235, 0.28);
+}
+
+
+/* Back Button */
+
+.back-btn {
+  color: var(--primary);
+
+  background: #ffffff;
+
+  border:
+    1px solid rgba(37, 99, 235, 0.25);
+}
+
+
+.back-btn:hover {
+  transform: translateY(-3px);
+
+  color: #ffffff;
+
+  background: var(--primary);
+
+  box-shadow:
+    0 12px 25px rgba(37, 99, 235, 0.16);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .call-papers-section {
+    padding: 80px 0;
+  }
+
+
+  .call-papers-card {
+    padding: 48px 38px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .call-papers-section {
+    padding: 65px 0;
+  }
+
+
+  .call-papers-grid {
+    background-size: 40px 40px;
+  }
+
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .section-heading h2 {
+    font-size: 2.5rem;
+  }
+
+
+  .call-papers-card {
+    padding: 38px 22px;
+
+    border-radius: 18px;
+  }
+
+
+  .call-papers-card h3 {
+    font-size: 1.65rem;
+  }
+
+
+  .call-papers-card p {
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+  }
+
+
+  .paper-highlight {
+    padding: 18px 18px;
+
+    font-size: 0.9rem;
+  }
+
+
+  .call-papers-footer {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .submit-btn,
+  .back-btn {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .call-papers-section {
+    padding: 55px 0;
+  }
+
+
+  .section-heading h2 {
+    font-size: 2.15rem;
+  }
+
+
+  .section-index {
+    font-size: 0.62rem;
+  }
+
+
+  .call-papers-card {
+    padding: 32px 18px;
+  }
+
+
+  .call-papers-card h3 {
+    font-size: 1.4rem;
+  }
+
+
+  .paper-status {
+    font-size: 0.58rem;
+
+    padding: 8px 11px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}
